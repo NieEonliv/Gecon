@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/register/more-info';
 
     /**
      * Create a new controller instance.
@@ -60,11 +60,12 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
      */
     protected function create(array $data)
     {
-        return User::create([
+        return User::query()->create([
+            'role' => 'student',
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

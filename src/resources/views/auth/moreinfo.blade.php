@@ -10,21 +10,38 @@
                          alt="">
                 </div>
                 <div class="col-md-6">
-                    <div class="align-items-center d-flex  h-100">
+                    <div class="align-items-center d-flex h-100">
                         <div class="ms-md-5 w-100">
                             <h1>Регистрация</h1>
 
                             <div class="card-body ">
-                                <form method="POST" action="{{ route('register') }} ">
+                                <form method="POST" action="{{ route('register.adventure') }}">
                                     @csrf
 
                                     <div class="row mb-3">
-                                        <label for="name" class="form-label ">Логин</label>
+                                        <label for="name" class="form-label ">Фамилия</label>
+
+                                        <div class="col-md-6">
+                                            <input id="lastname" type="text"
+                                                   class="form-control @error('lastname') is-invalid @enderror"
+                                                   name="lastname"
+                                                   value="{{ old('lastname') }}" required autocomplete="name" autofocus>
+
+                                            @error('lastname')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="name" class="form-label ">Имя</label>
 
                                         <div class="col-md-6">
                                             <input id="name" type="text"
                                                    class="form-control @error('name') is-invalid @enderror" name="name"
-                                                   value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                                   value="{{ old('name') }}" required autocomplete="name">
 
                                             @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -35,44 +52,34 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="name" class="form-label ">Электронная почта</label>
+                                        <label for="patronymic" class="form-label ">Отчество</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email"
-                                                   class="form-control @error('email') is-invalid @enderror" name="email"
-                                                   value="{{ old('email') }}" required autocomplete="email">
+                                            <input id="patronymic" type="text"
+                                                   class="form-control @error('patronymic') is-invalid @enderror" name="patronymic"
+                                                   value="{{ old('patronymic') }}" required autocomplete="patronymic">
 
-                                            @error('email')
+                                            @error('patronymic')
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                 <strong>{{ $message }}</strong>
+                                             </span>
                                             @enderror
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="name" class="form-label ">Пароль</label>
-
+                                        <label for="birthday" class="form-label ">Дата рождения</label>
 
                                         <div class="col-md-6">
-                                            <input id="password" type="password"
-                                                   class="form-control @error('password') is-invalid @enderror" name="password"
-                                                   required autocomplete="new-password">
+                                            <input id="birthday" type="date"
+                                                   class="form-control @error('birthday') is-invalid @enderror" name="birthday"
+                                                   value="{{ old('birthday') }}" required autocomplete="birthday">
 
-                                            @error('password')
+                                            @error('birthday')
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                 <strong>{{ $message }}</strong>
+                                             </span>
                                             @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="name" class="form-label ">Повторите пароль</label>
-
-                                        <div class="col-md-6">
-                                            <input id="password-confirm" type="password" class="form-control"
-                                                   name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>
 
@@ -80,7 +87,7 @@
                                         <div class="col-md-6 ">
                                             <div class="text-center">
                                                 <button type="submit" class="btn btn-primary">
-                                                    Зарегистироваться
+                                                     Продолжить
                                                 </button>
                                             </div>
                                         </div>
