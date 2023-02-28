@@ -20,9 +20,11 @@ Route::get('/', function () {
 Route::post('/register/adventure', [\App\Http\Controllers\RegMoreController::class, 'store'])->name('register.adventure');
 Route::middleware(\App\Http\Middleware\LowRegistrationMiddleware::class)->group(function () {
     Route::get('/register/adventure', [\App\Http\Controllers\RegMoreController::class, 'index']);
+    Route::post('/search',[\App\Http\Controllers\SearchController::class, 'index'])->name('search.post');
+
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(\App\Http\Middleware\StandartMiddleware::class)->group(function () {
 
-}) ;
+});
 

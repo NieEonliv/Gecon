@@ -16,7 +16,7 @@ class StandartMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user->lastname && Auth::check()) {
+        if ($request->user()?->lastname && Auth::check()) {
             return $next($request);
         } else {
             return abort(403);
