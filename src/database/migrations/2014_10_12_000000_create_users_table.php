@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('firstname')->nullable();
             $table->string('patronymic')->nullable();
             $table->date('birthday')->nullable();
+            $table->text('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

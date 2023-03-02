@@ -59,7 +59,7 @@
                                 <div class="row mb-0">
                                     <div class="col-md-6 ">
                                         <div class="text-center">
-                                            <button type="submit" class="btn  btn-primary">
+                                            <button type="submit" class="btn  btn-success">
                                                 Войти
                                             </button>
                                         </div>
