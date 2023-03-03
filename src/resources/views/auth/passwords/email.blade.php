@@ -42,7 +42,7 @@
 
                                 <div class="row mb-0">
                                     <div class="mx-auto offset-md-4 ms-5">
-                                        <button type="submit" class="btn btn-success">
+                                        <button type="submit" class="btn btn-primary">
                                             Отправить
                                         </button>
                                     </div>

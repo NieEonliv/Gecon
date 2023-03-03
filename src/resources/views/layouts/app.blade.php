@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <style>
         .gradient {
-            background: linear-gradient(41deg, rgba(2, 0, 36, 1) 0%, rgba(48, 255, 0, 1) 35%, rgba(0, 212, 255, 1) 100%);
+            background: linear-gradient(90deg, rgba(133,56,209,1) 0%, rgba(0,212,255,1) 100%);
         }
 
         .h-10 {

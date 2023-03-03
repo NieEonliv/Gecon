@@ -14,13 +14,10 @@ class SearchController extends Controller
         ])['search_param'];
         $response = [];
         foreach (Course::all() as $course) {
-            if (strripos($course->title,$data)) {
+            if (stristr($course->title,$data)) {
                 $response[] = $course;
             }
-            if (strripos($course->description,$data)) {
-                $response[] = $course;
-            }
-            if (strripos($course->author->firstname . ' ' . $course->author->firstname, $data))
+            if (stristr($course->author->firstname . ' ' . $course->author->lastname, $data))
             {
                 $response[] = $course;
             }

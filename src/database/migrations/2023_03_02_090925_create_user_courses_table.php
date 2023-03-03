@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->index()->constrained();
             $table->foreignId('course_id')->index()->constrained();
             $table->enum('status', ['started','finished'])->nullable();
+            $table->unique(['user_id', 'course_id']);
             $table->timestamps();
         });
     }

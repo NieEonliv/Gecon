@@ -23,15 +23,26 @@
                 </div>
             </div>
             <div class="col-md-2 ms-auto">
-                <form action="" method="post">
-                    @csrf
-                    <button class="btn btn-success w-100">Поступить на курс</button>
-                </form>
+                @foreach(\Illuminate\Support\Facades\Auth::user()->course as $enroll)
+                    @if($enroll->course->id == $course->id )
+                        @php($bool = true)
+                        <form action="{{ route('course.show', $course->id) }}" method="get">
+                            <button class="btn btn-primary w-100">Перейти к курсу</button>
+                        </form>
+                        @break
+                    @endif
+                @endforeach
+                @if(!isset($bool))
+                    <form action="{{ route('course.enroll', $course->id) }}" method="post">
+                        @csrf
+                        <button class="btn btn-primary w-100">Поступить на курс</button>
+                    </form>
+                @endif
                 <div class="mt-3 p-2" style="border: 3px solid green; border-radius: 10px">
                     <h4>В курс входят:</h4>
                     <?php
-                        $lecture = 0;
-                        $practical = 0;
+                    $lecture = 0;
+                    $practical = 0;
                     foreach ($course->module as $relation) {
                         $occupations = $relation->module->occupation;
                         foreach ($occupations as $occupation) {

@@ -31,18 +31,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN apt-get purge
 
-ARG UNAME=testuser
+ARG UNAME=gecon
 ARG UID=1000
 ARG GID=1000
 RUN groupadd -g $GID -o $UNAME && useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
 USER $UNAME
-
-RUN echo "alias ll='ls -la'" >> ~/.bashrc && \
-    echo "alias pu='clear && vendor/bin/phpunit'" >> ~/.bashrc && \
-    echo "alias pf='pu --filter'" >> ~/.bashrc && \
-    echo "alias pa='php artisan'" >> ~/.bashrc && \
-    echo "alias pint='/var/www/html/vendor/bin/pint'" >> ~/.bashrc && \
-    echo "alias pam='pa ide-helper:models -M'" >> ~/.bashrc && \
-    echo "alias ms='pa migrate:fresh && pa db:seed'" >> ~/.bashrc && \
-    echo "alias t='pa test'" >> ~/.bashrc && \
-    echo "alias tf='t --filter'" >> ~/.bashrc

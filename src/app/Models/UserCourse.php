@@ -17,6 +17,6 @@ class UserCourse extends Model
 
     public function course()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }
