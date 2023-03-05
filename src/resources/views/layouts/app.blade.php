@@ -109,7 +109,7 @@
                                 <div class="d-flex align-items-center me-3">
                                     <img style="height: 50px; width: 50px; border-radius: 50%"
                                          src="{{ \Illuminate\Support\Facades\Auth::user()->photo }}" alt="фото профиля">
-                                    <a class="dropdown-item ms-2" href="{{ route('logout') }}">
+                                    <a class="dropdown-item ms-2" href="{{ route('user.index', \Illuminate\Support\Facades\Auth::user()->id) }}">
                                         {{ \Illuminate\Support\Facades\Auth::user()->firstname }}
                                         {{ \Illuminate\Support\Facades\Auth::user()->lastname }}
                                     </a>

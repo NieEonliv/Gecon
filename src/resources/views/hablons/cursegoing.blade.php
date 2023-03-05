@@ -10,14 +10,16 @@
                     <div>
                         <h3>Уровень {{ $count }}. {{ $module->title }}</h3>
                         @foreach($module->occupation as $relation)
-                            <p>{{ $relation->occupation->title }}</p>
+                            <a href="{{ route('occupation.index', ['id' => $course->id, 'occupation' => $relation->occupation->id]) }}">
+                                <p>{{ $relation->occupation->title }}</p>
+                            </a>
                         @endforeach
                     </div>
                     @php($count++)
                 @endforeach
             </div>
             <div class="col-md-6">
-                @yield('content')
+                @yield('content_o')
             </div>
         </div>
     </div>

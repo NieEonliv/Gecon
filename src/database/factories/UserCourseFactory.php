@@ -20,7 +20,8 @@ class UserCourseFactory extends Factory
     {
         return [
             'user_id' => User::all()->random()->id,
-            'course_id' => Course::all()->random()->id
+            'course_id' => Course::all()->random()->id,
+            'status' => array_rand(['started' => 'started', 'finished' => 'finished'])
         ];
     }
 }

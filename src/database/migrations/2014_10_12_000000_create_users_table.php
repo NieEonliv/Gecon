@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('patronymic')->nullable();
             $table->date('birthday')->nullable();
             $table->text('photo')->nullable();
+            $table->unsignedInteger('level')->default(1);
+            $table->enum('class',['Воин','Маг','Элементалист', 'Следопыт'])->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
