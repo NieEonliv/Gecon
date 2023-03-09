@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('user_courses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->index()->constrained();
-            $table->foreignId('course_id')->index()->constrained();
-            $table->enum('status', ['started','finished'])->nullable();
+            $table->foreignId('course_id')->index()->constrained()->cascadeOnDelete();
+            $table->enum('status', ['started', 'finished'])->nullable();
+            $table->unsignedInteger('exp')->default(0);
+            $table->unsignedInteger('current_level')->default(1);
             $table->unique(['user_id', 'course_id']);
             $table->timestamps();
         });

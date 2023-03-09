@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class UserCourse extends Model
 {
     use HasFactory;
+
     protected $guarded = false;
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function course()

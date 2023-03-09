@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->unsignedInteger('number');
-            $table->enum('status', ['started','finished'])->nullable();
+            $table->enum('status', ['started', 'finished'])->nullable();
             $table->timestamps();
         });
     }

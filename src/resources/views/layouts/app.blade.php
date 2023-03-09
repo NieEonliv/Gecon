@@ -31,6 +31,11 @@
             padding: 20px;
         }
 
+        .black {
+            color: black;
+            text-decoration: none;
+        }
+
         @media (max-width: 991px) {
             .header-custom {
                 background: white;
@@ -66,7 +71,7 @@
                     <ul class="navbar-nav me-auto">
                         <a class="dropdown-item ms-3" href="{{ route('home') }}">Каталог курсов</a>
                         @if(\Illuminate\Support\Facades\Auth::check())
-                            <a class="dropdown-item ms-3" href="{{ route('home') }}">Преподавание</a>
+                            <a class="dropdown-item ms-3" href="{{ route('index.teacher') }}">Преподавание</a>
                         @endif
                     </ul>
 
@@ -109,7 +114,7 @@
                                 <div class="d-flex align-items-center me-3">
                                     <img style="height: 50px; width: 50px; border-radius: 50%"
                                          src="{{ \Illuminate\Support\Facades\Auth::user()->photo }}" alt="фото профиля">
-                                    <a class="dropdown-item ms-2" href="{{ route('user.index', \Illuminate\Support\Facades\Auth::user()->id) }}">
+                                    <a class="dropdown-item ms-2" href="{{ route('user.index') }}">
                                         {{ \Illuminate\Support\Facades\Auth::user()->firstname }}
                                         {{ \Illuminate\Support\Facades\Auth::user()->lastname }}
                                     </a>

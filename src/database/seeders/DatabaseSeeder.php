@@ -10,7 +10,6 @@ use App\Models\ModuleOccupation;
 use App\Models\Occupation;
 use App\Models\User;
 use App\Models\UserCourse;
-use Database\Factories\OccupationFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

@@ -20,7 +20,7 @@ class OccupationFactory extends Factory
             'title' => $this->faker->word,
             'type' => array_rand(['lecture' => 'lecture', 'practical' => 'practical']),
             'experience' => random_int(10, 15),
-            'content' => '<p>' . $this->faker->text . '</p>'
+            'content' => '<p>'.$this->faker->text.'</p>',
         ];
     }
 }

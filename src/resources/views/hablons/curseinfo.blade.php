@@ -44,7 +44,7 @@
                         </form>
                     @endif
                 @endguest
-                <div class="mt-3 p-2" style="border: 3px solid green; border-radius: 10px">
+                <div class="mt-3 p-2" style="border: 3px solid #0d6efd; border-radius: 10px">
                     <h4>В курс входят:</h4>
                         <?php
                         $lecture = 0;

@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class RegMoreStorRequest extends FormRequest
+class LowCourseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,13 +15,16 @@ class RegMoreStorRequest extends FormRequest
         return Auth::check();
     }
 
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
+     */
     public function rules(): array
     {
         return [
-            'lastname' => 'required|min:3',
-            'name' => 'required|min:3',
-            'patronymic' => 'required|min:3',
-            'birthday' => 'required|date',
+            'title' => 'required',
+            'description' => 'required',
         ];
     }
 }

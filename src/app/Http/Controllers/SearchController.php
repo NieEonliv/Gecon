@@ -10,18 +10,18 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $data = $request->validate([
-            'search_param' => 'required'
+            'search_param' => 'required',
         ])['search_param'];
         $response = [];
         foreach (Course::all() as $course) {
-            if (stristr($course->title,$data)) {
+            if (stristr($course->title, $data)) {
                 $response[] = $course;
             }
-            if (stristr($course->author->firstname . ' ' . $course->author->lastname, $data))
-            {
+            if (stristr($course->author->firstname.' '.$course->author->lastname, $data)) {
                 $response[] = $course;
             }
         }
-        return view('hablons.search',compact('response', 'data'));
+
+        return view('hablons.search', compact('response', 'data'));
     }
 }

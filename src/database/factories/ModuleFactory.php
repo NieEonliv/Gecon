@@ -18,7 +18,7 @@ class ModuleFactory extends Factory
     {
         return [
             'title' => $this->faker->word,
-            'number' => random_int(0,10),
+            'number' => random_int(0, 10),
         ];
     }
 }

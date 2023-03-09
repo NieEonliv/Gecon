@@ -30,6 +30,7 @@ class RegMoreController extends Controller
             'patronymic' => $data['patronymic'],
             'birthday' => $data['birthday'],
         ]);
+
         return redirect()->route('home');
     }
 

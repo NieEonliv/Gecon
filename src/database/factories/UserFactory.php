@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'firstname' => $this->faker->word,
             'patronymic' => $this->faker->word,
             'birthday' => $this->faker->date,
-            'photo' => $this->faker->imageUrl
+            'photo' => $this->faker->imageUrl,
         ];
     }
 

@@ -8,8 +8,7 @@ class ApiPaintController extends Controller
 {
     public static function index()
     {
-       $data = Http::post('https://randomall.ru/api/gens/278',[]);
+        $data = Http::post('https://randomall.ru/api/gens/278', []);
         dd($data);
-
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('type', ['lecture', 'practical']);
             $table->unsignedInteger('experience');
             $table->text('content');
-            $table->enum('status', ['started','finished'])->nullable();
+            $table->enum('status', ['started', 'finished'])->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('password');
-            $table->enum('role',['student','admin','teacher']);
+            $table->enum('role', ['student', 'admin', 'teacher']);
             $table->string('email')->unique();
             $table->string('lastname')->nullable();
             $table->string('firstname')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date('birthday')->nullable();
             $table->text('photo')->nullable();
             $table->unsignedInteger('level')->default(1);
-            $table->enum('class',['Воин','Маг','Элементалист', 'Следопыт'])->nullable();
+            $table->enum('class', ['Воин', 'Маг', 'Элементалист', 'Следопыт'])->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

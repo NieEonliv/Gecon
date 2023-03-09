@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,8 +18,8 @@ class CourseFactory extends Factory
     {
         return [
             'title' => $this->faker->word,
-            'author_id' => User::all()->random()->id,
-            'price' => random_int(100,100000),
+            'author_id' => random_int(1, 2),
+            'price' => random_int(100, 100000),
             'image' => $this->faker->imageUrl,
             'description' => $this->faker->text,
         ];
