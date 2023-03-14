@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(30)->create();
         User::query()->first()->update(['email' => 'test@test.com', 'password' => '$2y$10$736iaNvRFW4SpwgW1/OIXer1Z9bOjKEoXj25BK9sbOqZml5McH6mG']);
-        Course::factory(30)->create();
-        Module::factory(90)->create();
-        Occupation::factory(270)->create();
-        ModuleOccupation::factory(270)->create();
-        CourseModule::factory(30)->create();
-        UserCourse::factory(30)->create();
+        Course::factory(10)->create();
+        Module::factory(30)->create();
+        Occupation::factory(90)->create();
+        ModuleOccupation::factory(30)->create();
+        CourseModule::factory(10)->create();
+        UserCourse::factory(4)->create();
     }
 }

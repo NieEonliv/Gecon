@@ -50,5 +50,16 @@ Route::middleware(\App\Http\Middleware\StandartMiddleware::class)->group(functio
         Route::delete('/curses/{id}/delete', [\App\Http\Controllers\CourseController::class, 'destroy'])->name('destroy.course');
         Route::patch('/curses/{id}/updatelow', [\App\Http\Controllers\CourseController::class, 'updatelow'])->name('update.low.course');
         Route::get('/curses/{id}/update', [\App\Http\Controllers\CourseController::class, 'edit'])->name('edit.course');
+
+        Route::post('/teaching/search/course', [\App\Http\Controllers\CourseController::class, 'searchCourseTeaching'])->name('teaching.course.search');
+        Route::post('/teaching/search/student', [\App\Http\Controllers\CourseController::class, 'searchStudentTeaching'])->name('teaching.student.search');
+
+        Route::get('/teaching/register-course', [\App\Http\Controllers\CourseController::class, 'get_create'])->name('course.create');
+        Route::post('/teaching/post-course', [\App\Http\Controllers\CourseController::class, 'store'])->name('teaching.create.course');
+
+        Route::post('/create/module/for/{id}', [\App\Http\Controllers\ModuleController::class, 'store'])->name('module.create');
+        Route::get('/create/{idcourse}/module/for/{idmodule}', [\App\Http\Controllers\ModuleController::class, 'create'])->name('module.get');
+        Route::get('/create/{idcourse}/occupation/{idoccupation}', [\App\Http\Controllers\ModuleController::class, 'editOccupatio'])->name('occupation.get');
+        Route::patch('/create/module/{id}/update', [\App\Http\Controllers\ModuleController::class, 'update'])->name('module.update');
     });
 });

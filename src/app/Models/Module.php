@@ -15,4 +15,9 @@ class Module extends Model
     {
         return $this->hasMany(ModuleOccupation::class);
     }
+
+    public function course()
+    {
+        return $this->hasOne(CourseModule::class);
+    }
 }

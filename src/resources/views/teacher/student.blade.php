@@ -2,7 +2,7 @@
 
 @section('content_o')
     <h3>Учащиеся</h3>
-    <form action="{{ route('search.post') }}" method="post"
+    <form action="{{ route('teaching.student.search') }}" method="post"
           class="position-relative mb-3">
         @csrf
         <button style="background: none; border: none; margin: 0"
@@ -17,7 +17,7 @@
         <input name="search_param" type="search" style="max-width: 270px; display: inline-block"
                class="form-control form-control-sm ps-5"
                placeholder="Введите Фамилию учащегося">
-        <a href="" class="btn btn-primary ms-3 btn-sm">Найти</a>
+        <button class="btn btn-primary ms-3 btn-sm">Найти</button>
     </form>
     @foreach(\App\Models\Course::query()->where(['author_id' => \Illuminate\Support\Facades\Auth::user()->id])->get() as $course)
         @foreach($course->user as $relation)

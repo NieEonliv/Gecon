@@ -1,8 +1,9 @@
 @extends('hablons.teaching')
 
 @section('content_o')
-    <h3>Курсы</h3>
-    <form action="{{ route('teaching.course.search') }}" method="post" class="position-relative mb-3">
+    <h3>Курсы <span>по запросу {{ $data }}</span></h3>
+    <form action="{{ route('teaching.course.search') }}" method="post"
+          class="position-relative mb-3">
         @csrf
         <button style="background: none; border: none; margin: 0"
                 class="position-absolute top-0 start-0 ms-2">
@@ -18,7 +19,7 @@
                placeholder="Ведите название курса">
         <button class="btn btn-primary ms-3 btn-sm">Найти</button>
     </form>
-    @foreach(\App\Models\Course::query()->where(['author_id' => \Illuminate\Support\Facades\Auth::user()->id])->get() as $course)
+    @foreach($courses as $course)
         <a style="text-decoration: none" href="{{ route('course.lowshow.teacher', $course->id) }}">
             <div class="card mb-3" style="max-height: 200px">
                 <div class="row g-0" style="min-height: 170px">
@@ -37,7 +38,7 @@
         @php($bool = true)
     @endforeach
     @if(!isset($bool))
-        <h1>Создайте свой первый курс!</h1>
+        <h1>Курсов не найденно!</h1>
     @endif
 
 @endsection
